@@ -35,12 +35,7 @@ class Owner
   end
 
   def buy_dog(dog_name)
-    Dog.all.each do |a_dog|
-      if a_dog.name == dog_name
-        a_dog.owner = self
-        self.dogs << a_dog
-      end
-    end
+    Dog.new(dog_name, self)
   end    
   
   def walk_dogs
